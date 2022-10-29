@@ -217,7 +217,7 @@ def write_html_body():
 
   htmlpart = '''  <br/><br/><br/>
   <table width="100%">
-    <tr><th colspan="5">DONE</th></tr>'''
+    <tr><th>DONE</th></tr>'''
   for x, y in DoneList.items(): 
     htmlpart = htmlpart + '<tr><td>'
     htmlpart = htmlpart + '<a href="http://raspberrypi/index.py?purge=' + str(x) + '">&nbsp;&#8855;</a>'
