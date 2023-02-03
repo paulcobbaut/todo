@@ -10,7 +10,6 @@ In other words, I have been using this humble LAMP project as my personal TODO l
 - Mysql = MariaDB
 - PHP/Perl/Python = Python
 
-
 ### HOWTO
 There are stars from * till *****. For me ***** is the most urgent TODO and * is the least urgent. YMMV
 ![todo1](https://user-images.githubusercontent.com/524195/198712930-b702fa3d-ba50-43f6-8730-540c1a0d8adf.png)
@@ -36,6 +35,15 @@ Items can be purged from 'Done' using the circle_with_cross symbol.
 ![purge](https://user-images.githubusercontent.com/524195/198713774-19a02049-367e-4d4d-bf37-1bda76d06bb2.png)
 
 
+### installing
+Installing may require these steps:
+- apt install apache2 libapache2-mod-python mariadb-server
+- pip3 install mysql-connector-python
+- add .py as handler in /etc/apache/mods-enabled/mime.conf
+- cp index.py /var/www/html/
+- create database todo;
+- create table todo (item varchar(255), priority enum('1','2','3','4','5'), done tinyint(1), date date);
+- insert into todo values ('test','2',0, '2023-02-02');
 
 ### BUGS
 - There is no unique key in the table, so identical items are 'deleted' together.
